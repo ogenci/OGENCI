@@ -41,6 +41,24 @@ const caseStudies = {
     quote: "OGENCI completely elevated our digital presence. The new platform immediately commands the prestige our curriculum delivers, drastically increasing qualified admissions inquiries.",
     author: "Admissions Director",
     role: "International School of Accra"
+  },
+  "wesleyan": {
+    client: "Wesleyan Charismatics",
+    tagline: "Unleashing Global Revival Through Digital Connection",
+    industry: "Non-Profit / Faith",
+    location: "Global HQ: Indiana, USA",
+    service: "Digital Transformation & AI",
+    year: "2025",
+    challenge: "WCIM is a global ministry with branches from the US to Ghana, yet their digital presence was fragmented. They needed a unified platform that could handle high-bandwidth livestreams, a complex global sermon archive, and a secure, multi-currency donation system that worked seamlessly across international borders.",
+    solution: "We engineered a high-fidelity digital ecosystem centered on 'Digital Fellowship'. This included a custom-built low-latency streaming engine, an AI-powered sermon search index, and a streamlined global giving portal. The platform now serves as the digital heartbeat for thousands of members worldwide, unifying their global mission under one high-performance interface.",
+    stats: [
+      { label: "Stream Reach", value: "+310%" },
+      { label: "Donation Lift", value: "+85%" },
+      { label: "Global Engagement", value: "4.5x" },
+    ],
+    quote: "OGENCI didn't just build a website; they built a digital sanctuary. Our ability to connect with our global congregation has never been more powerful or seamless.",
+    author: "Noah Raymoss Armah",
+    role: "Founder & General Overseer"
   }
 };
 

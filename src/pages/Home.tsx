@@ -616,6 +616,13 @@ export default function Home() {
                     bg: "hsl(77, 100%, 38%)", text: "#0a0a0a",
                     externalUrl: "https://rich-jane-school.vercel.app/"
                   },
+                  {
+                    tag: "Digital Transformation · 2025", meta: "NON-PROFIT · GLOBAL",
+                    title: "Wesleyan CM",
+                    desc: "A unified global digital sanctuary for a multi-national ministry. High-bandwidth streaming and global donation systems.",
+                    bg: "#0a0a0a", text: "#ffffff",
+                    externalUrl: "https://wesleyancm.org/"
+                  },
                 ].map(({ tag, meta, title, desc, bg, text, externalUrl }) => (
                   externalUrl ? (
                     <a key={title} href={externalUrl} target="_blank" rel="noopener noreferrer" className="group cursor-pointer" data-cursor="view">
