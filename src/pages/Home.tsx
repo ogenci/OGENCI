@@ -195,8 +195,11 @@ export default function Home() {
 
 
 
+              <div className="mt-12 flex items-center gap-4 text-[10px] font-mono text-muted-foreground uppercase tracking-widest bg-background/50 backdrop-blur-sm px-4 py-2 border border-border rounded-full">
                 <span>Strategy · Design · Ads · AI · Growth</span>
-                <span className="hidden sm:block">Rooted in Africa · Serving the World</span>
+                <span className="opacity-30">|</span>
+                <span>Rooted in Africa · Serving the World</span>
+              </div>
             </motion.div>
           </section>
 

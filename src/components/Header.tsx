@@ -39,8 +39,8 @@ export default function Header() {
       {/* Topbar */}
       <div className="xl:px-10 w-full max-w-[1600px] mx-auto relative hidden md:block">
         <div className="border-b border-border py-2 px-6 flex justify-between text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-          <span>OGENCI · Accra, Ghana · Digital Agency</span>
-          <span className="hidden lg:block">Web Design · Paid Ads · AI Integrations · Africa</span>
+          <span>OGENCI · Rooted in Africa · Serving the World</span>
+          <span className="hidden lg:block">Web Design · Paid Ads · AI Integrations · Global ROI</span>
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span>Booking Q3 · 2026 · EN </span>
@@ -70,7 +70,7 @@ export default function Header() {
                   </div>
                   <div className="flex flex-col hidden md:flex">
                     <span className="text-xl font-display font-bold tracking-[0.3em] text-foreground uppercase leading-none mr-[-0.3em]">OGENCI</span>
-                    <span className="text-[7px] font-mono text-muted-foreground uppercase tracking-[0.58em] leading-none mt-1.5 mr-[-0.58em]">Accra · Ghana</span>
+                    <span className="text-[7px] font-mono text-muted-foreground uppercase tracking-[0.38em] leading-none mt-1.5 mr-[-0.38em]">Rooted in Africa · Built for the World</span>
                   </div>
                 </Link>
               </div>
