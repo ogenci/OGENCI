@@ -154,7 +154,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-3 py-1 border border-border rounded-full text-[10px] font-mono mb-8 uppercase tracking-widest text-muted-foreground bg-background/50 backdrop-blur-sm"
               >
                 <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                Digital Agency · Accra, Ghana · No. 1 in West Africa
+                Digital Agency · Rooted in Africa · Built for the World
               </motion.div>
 
               <h1 className="text-5xl sm:text-6xl md:text-[84px] font-display font-bold leading-[1.02] tracking-tight mb-8 text-foreground max-w-4xl">
@@ -162,7 +162,7 @@ export default function Home() {
               </h1>
 
               <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground leading-relaxed mb-12 max-w-2xl font-bold">
-                Beautiful websites and expensive ads don't scale businesses—revenue does. OGENCI builds the high-converting digital infrastructure that turns your traffic into predictable, data-backed profit across Africa.
+                Beautiful websites and expensive ads don't scale businesses—revenue does. OGENCI builds the high-converting digital infrastructure that turns your traffic into predictable, data-backed profit globally.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -195,17 +195,15 @@ export default function Home() {
 
 
 
-              <div className="mt-12 flex items-center gap-8 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
                 <span>Strategy · Design · Ads · AI · Growth</span>
-                <span className="hidden sm:block">5.6003 N · 0.1969 W · Accra, Ghana</span>
-              </div>
+                <span className="hidden sm:block">Rooted in Africa · Serving the World</span>
             </motion.div>
           </section>
 
           {/* SEC 3: Why OGENCI */}
           <section id="why" className="px-6 pt-16 pb-32 bg-[#f4f1ea] border-y border-border/50">
             <div className="max-w-[1400px] mx-auto">
-              <SectionRule num="II." title="Why OGENCI · Performance Marketing · African Growth" page="002/008" />
+              <SectionRule num="II." title="Why OGENCI · Performance Marketing · Global Scale" page="002/008" />
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mt-12">
               <motion.div
                 initial="hidden"
@@ -221,7 +219,7 @@ export default function Home() {
                   We treat <em className="italic font-normal font-serif text-primary">your business</em> like a <em className="italic font-normal font-serif">growth partner</em>, not a billable hour.
                 </h2>
                 <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground leading-relaxed mb-10 font-bold">
-                  Stop paying for <span className="text-primary">pretty pages</span> and vanity metrics. OGENCI replaces guesswork with <span className="text-primary">high-converting pipelines</span> engineered for the African market. We optimize every site, ad, and automation for mobile-first users and local currencies to lower your acquisition costs and scale your revenue.
+                  Stop paying for <span className="text-primary">pretty pages</span> and vanity metrics. OGENCI replaces guesswork with <span className="text-primary">high-converting pipelines</span> engineered for global performance. We optimize every site, ad, and automation for international user behaviors and seamless scaling to lower your acquisition costs and maximize your revenue.
                 </p>
                 <motion.a 
                   initial="initial"
@@ -273,7 +271,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="text-5xl md:text-[68px] font-display font-bold leading-[1.05] tracking-tight text-foreground max-w-5xl"
                 >
-                  Everything needed to <em className="italic font-normal font-serif text-primary">dominate</em> digital markets in <em className="italic font-normal font-serif">Africa</em>.
+                  Everything needed to <em className="italic font-normal font-serif text-primary">dominate</em> digital markets <em className="italic font-normal font-serif">globally</em>.
                 </motion.h2>
               </div>
 
@@ -283,7 +281,7 @@ export default function Home() {
                     num: "01",
                     tag: "Web Design",
                     title: "Conversion Architecture",
-                    desc: "Mobile-first, hyper-fast landing pages and e-commerce stores engineered for local currencies and low-bandwidth connections. We don't just build websites; we build predictable revenue machines.",
+                    desc: "High-performance, conversion-first digital ecosystems engineered for global brands. We don't just build websites; we build predictable revenue machines that work anywhere.",
                     features: ["UI/UX Strategy", "Mobile-First Dev", "Speed Optimization", "Conversion Flow"]
                   },
                   {
@@ -347,7 +345,7 @@ export default function Home() {
                   Pricing built for <em className="italic font-normal font-serif text-primary">scale</em>, not for <em className="italic font-normal font-serif">billing hours</em>.
                 </motion.h2>
                 <div className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-muted-foreground pb-4 border-b border-border">
-                  Monthly retainers · No hidden fees · Africa-first
+                  Monthly retainers · No hidden fees · Global Standards
                 </div>
               </div>
 
@@ -468,7 +466,7 @@ export default function Home() {
               <div className="flex gap-6 max-w-sm">
                 <span className="text-2xl font-light mt-[-4px]" style={{ color: "hsl(77, 100%, 38%)" }}>+</span>
                 <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground leading-relaxed font-bold">
-                  Every project follows our proven four-stage growth framework, research-first, data-validated, and built for the African market.
+                  Every project follows our proven four-stage growth framework, research-first, data-validated, and built for a global audience.
                 </p>
               </div>
             </div>
@@ -482,14 +480,14 @@ export default function Home() {
                     <div className="bg-background border border-border rounded shadow-sm p-3 w-full text-[10px] font-mono space-y-1">
                       <div className="font-semibold" style={{ color: "hsl(77, 100%, 35%)" }}>Audience Research</div>
                       <div className="text-muted-foreground">Market Analysis</div>
-                      <div className="text-muted-foreground">Market Analysis (GH/Africa)</div>
+                      <div className="text-muted-foreground">Global Market Analysis</div>
                       <div className="text-muted-foreground">Conversion Gap Mapping</div>
                     </div>
                   ),
                 },
                 {
                   num: "02", title: "Strategise",
-                  desc: "We build a custom growth strategy with clear KPIs, channel mix, and budget allocation specific to your industry and African target market.",
+                  desc: "We build a custom growth strategy with clear KPIs, channel mix, and budget allocation specific to your industry and global target market.",
                   visual: (
                     <div className="bg-background border border-border rounded shadow-sm p-3 w-full space-y-2">
                       <div className="h-2 w-2/3 rounded-full" style={{ backgroundColor: "hsl(77, 100%, 80%)" }} />
@@ -501,7 +499,7 @@ export default function Home() {
                 },
                 {
                   num: "03", title: "Build",
-                  desc: "Execution: website development, ad creative production, AI integration, and SEO setup, all optimised for mobile-first African audiences.",
+                  desc: "Execution: website development, ad creative production, AI integration, and SEO setup, all optimised for international conversion standards.",
                   visual: (
                     <div className="grid grid-cols-2 gap-1 w-full h-20">
                       <div className="bg-foreground rounded-sm" />
@@ -550,7 +548,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-6 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
               <div className="flex items-center gap-4">
                 <span className="w-8 h-8 rounded-full border border-border shrink-0" />
-                <span>Research-first. Results-obsessed. Africa-built.</span>
+                <span>Research-first. Results-obsessed. Rooted in Africa. Built for the World.</span>
               </div>
               <button 
                 data-cal-namespace="lets-talk"
@@ -670,7 +668,7 @@ export default function Home() {
 
           {/* SEC 8: Testimonials */}
           <section className="px-6 pt-24 pb-12">
-            <SectionRule num="VII." title="Client Stories · Ghana · Nigeria · Kenya · Africa" page="007/008" />
+            <SectionRule num="VII." title="Client Stories · Global Partnerships · ROI Driven" page="007/008" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-20">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="lg:col-span-7">
@@ -745,7 +743,7 @@ export default function Home() {
                           </div>
                         ))}
                       </div>
-                      <div className="text-[10px] font-mono uppercase tracking-widest opacity-30 mt-8">OGENCI Digital · Accra, Ghana</div>
+                      <div className="text-[10px] font-mono uppercase tracking-widest opacity-30 mt-8">OGENCI Digital · Global HQ: Accra, Ghana</div>
                     </div>
                   </div>
                 </div>
@@ -765,9 +763,7 @@ export default function Home() {
                 <h2 className="text-5xl md:text-[68px] font-display font-bold leading-[1.02] tracking-tight mb-8">
                   Let's build something <em className="italic font-normal">open</em> and <em className="italic font-normal">unforgettable</em> together.
                 </h2>
-                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground leading-relaxed mb-12 max-w-2xl font-bold">
-                  Ready to grow your business with a top digital agency in Ghana? Whether you need a high-converting website, paid ad campaigns that actually deliver ROI, or AI systems that scale your operations, OGENCI is your partner for African digital growth.
-                </p>
+                  Ready to grow your business with a top-tier global digital agency? Whether you need a high-converting website, paid ad campaigns that actually deliver ROI, or AI systems that scale your operations, OGENCI is your partner for global digital growth.
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                   {[

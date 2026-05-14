@@ -212,14 +212,18 @@ export default function WorkPage() {
               Ready to <em className="italic font-normal text-primary">scale?</em>
             </h2>
             <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/70 mb-12 font-bold leading-relaxed max-w-xl mx-auto">
-              Stop guessing. Start growing. Get a data-driven strategy custom-built for your business and the African market.
+              Stop guessing. Start growing. Get a data-driven strategy custom-built for your business and the global market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/audit">
-                <button className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] inline-flex items-center justify-center gap-2 text-[10px] font-mono transition-transform hover:scale-105" style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}>
-                  Book Your Free Audit <ArrowUpRight className="w-4 h-4" />
-                </button>
-              </Link>
+              <div
+                data-cal-namespace="lets-talk"
+                data-cal-link="ogenci/lets-talk"
+                data-cal-config='{"layout":"month_view"}'
+                className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] inline-flex items-center justify-center gap-2 text-[10px] font-mono transition-transform hover:scale-105 cursor-pointer" 
+                style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
+              >
+                Let's Talk <ArrowUpRight className="w-4 h-4" />
+              </div>
               <Link href="/">
                 <button className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] inline-flex items-center justify-center gap-2 text-[10px] font-mono text-white border border-white/20 hover:bg-white/10 transition-colors">
                   Back to Home

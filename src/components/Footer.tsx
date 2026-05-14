@@ -10,7 +10,7 @@ export default function Footer() {
             OGENCI<span className="text-primary">.</span>
           </Link>
           <p className="text-[10px] font-mono uppercase tracking-[0.2em] font-bold text-[#0a0a0a]/70 leading-relaxed mb-6 max-w-xs">
-            Ghana's leading digital growth agency. We help businesses across Africa grow with high-converting web design, precision paid advertising, and AI-powered automation. Based in Accra, building for Africa.
+            A premier global digital agency rooted in Africa. We build high-converting digital ecosystems, run ROI-driven ad campaigns, and deploy AI systems that scale businesses worldwide.
           </p>
           <button
             data-cal-namespace="lets-talk"
@@ -27,11 +27,11 @@ export default function Footer() {
           {
             title: "Services",
             links: [
-              { name: "Web Design Ghana", href: "/#services" },
-              { name: "Paid Ads Africa", href: "/#services" },
+              { name: "Global Web Design", href: "/#services" },
+              { name: "Paid Ads & ROI", href: "/#services" },
               { name: "AI Integrations", href: "/#services" },
               { name: "Growth Strategy", href: "/#services" },
-              { name: "SEO Ghana", href: "/#services" }
+              { name: "Performance SEO", href: "/#services" }
             ],
           },
           {
@@ -88,8 +88,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-[#0a0a0a]/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-mono uppercase tracking-widest text-[#0a0a0a]/60 max-w-[1600px] mx-auto">
-        <span>© OGENCI Digital Agency 2025 · Accra, Ghana · All rights reserved</span>
-        <span className="hidden md:block">Web Design · Paid Ads · AI Integrations · West Africa</span>
+        <span>© OGENCI Digital Agency 2026 · Global HQ: Accra, Ghana · All rights reserved</span>
+        <span className="hidden md:block">Web Design · Paid Ads · AI Integrations · Serving Worldwide</span>
         <img src="/favicon.svg" alt="OGENCI" className="w-5 h-5 object-contain" />
       </div>
     </footer>
