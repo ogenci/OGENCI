@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "cd artifacts/open-design-clone && pnpm build",
+  "outputDirectory": "artifacts/open-design-clone/dist/public",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
