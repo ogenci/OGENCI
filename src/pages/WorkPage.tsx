@@ -68,6 +68,7 @@ const fadeUp: Variants = {
 };
 
 export default function WorkPage() {
+  const { openModal } = useBooking();
   const [, params] = useRoute("/work/:slug");
   const slug = params?.slug || "jonmoore";
   
@@ -234,9 +235,7 @@ export default function WorkPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div
-                data-cal-namespace="lets-talk"
-                data-cal-link="ogenci/lets-talk"
-                data-cal-config='{"layout":"month_view"}'
+                onClick={openModal}
                 className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] inline-flex items-center justify-center gap-2 text-[10px] font-mono transition-transform hover:scale-105 cursor-pointer" 
                 style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
               >

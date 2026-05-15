@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, Suspense, lazy } from "react";
-import { getCalApi } from "@calcom/embed-react";
 
 function CursorManager() {
   useEffect(() => {
@@ -45,17 +44,6 @@ function ScrollToTop() {
 }
 
 function Router() {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({"namespace":"lets-talk"});
-      cal("ui", {
-        "styles": {"branding": {"brandColor": "#000000"}},
-        "hideEventTypeDetails": false,
-        "layout": "month_view"
-      });
-    })();
-  }, []);
-
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
@@ -79,17 +67,17 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={
-          import.meta.env.BASE_URL.startsWith("/") && import.meta.env.BASE_URL !== "/"
-            ? import.meta.env.BASE_URL.replace(/\/$/, "")
-            : window.location.pathname.startsWith("/OGENCI")
-            ? "/OGENCI"
-            : ""
-        }>
-          <CursorManager />
-          <CustomCursor />
-          <Router />
-        </WouterRouter>
+          <WouterRouter base={
+            import.meta.env.BASE_URL.startsWith("/") && import.meta.env.BASE_URL !== "/"
+              ? import.meta.env.BASE_URL.replace(/\/$/, "")
+              : window.location.pathname.startsWith("/OGENCI")
+              ? "/OGENCI"
+              : ""
+          }>
+            <CursorManager />
+            <CustomCursor />
+            <Router />
+          </WouterRouter>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

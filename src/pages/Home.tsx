@@ -625,7 +625,7 @@ export default function Home() {
                   data-cal-config='{"layout":"month_view"}'
                   className="text-[10px] font-mono uppercase tracking-[0.2em] font-bold border-b border-border pb-1 hover:text-muted-foreground transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
-                  Let's Talk <ArrowRight className="w-3 h-3" />
+                  Let's Talk <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </motion.div>
 
@@ -772,7 +772,7 @@ export default function Home() {
                   data-cal-config='{"layout":"month_view"}'
                   className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] font-bold border-b border-border pb-1 hover:text-primary transition-colors mt-12 cursor-pointer"
                 >
-                  Let's Talk <ArrowRight className="w-3 h-3" />
+                  Let's Talk <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </motion.div>
 
