@@ -66,6 +66,51 @@ const testimonials = [
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const [pricingService, setPricingService] = useState('Web Design');
+  const [formData, setFormData] = useState({
+    name: "",
+    businessName: "",
+    email: "",
+    phone: "",
+    services: [] as string[],
+  });
+  const [status, setStatus] = useState<{ type: 'idle' | 'loading' | 'success' | 'error'; message?: string }>({ type: 'idle' });
+
+  const handleServiceToggle = (service: string) => {
+    setFormData(prev => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter(s => s !== service)
+        : [...prev.services, service]
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.services.length === 0) {
+      setStatus({ type: 'error', message: 'Please select at least one service.' });
+      return;
+    }
+
+    setStatus({ type: 'loading' });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send enquiry');
+      }
+
+      setStatus({ type: 'success', message: 'Message sent! We\'ll be in touch soon.' });
+      setFormData({ name: "", businessName: "", email: "", phone: "", services: [] });
+    } catch (error: any) {
+      setStatus({ type: 'error', message: error.message || 'Something went wrong. Please try again.' });
+    }
+  };
 
   const pricingPlans = {
     'Web Design': [
@@ -823,18 +868,21 @@ export default function Home() {
                 className="lg:col-span-5"
               >
                 <div className="corner-marks p-4 border border-border bg-card">
-                  <div className="p-8 space-y-5">
+                  <form onSubmit={handleSubmit} className="p-8 space-y-5">
                     <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">Quick enquiry</div>
                     {[
-                      { label: "Your name", placeholder: "Kwame Asante", type: "text" },
-                      { label: "Business name", placeholder: "BuildRight Ghana Ltd", type: "text" },
-                      { label: "Email address", placeholder: "kwame@yourcompany.com.gh", type: "email" },
-                      { label: "Phone or WhatsApp", placeholder: "+233 XX XXX XXXX", type: "tel" },
-                    ].map(({ label, placeholder, type }) => (
+                      { label: "Your name", key: "name", placeholder: "Kwame Asante", type: "text" },
+                      { label: "Business name", key: "businessName", placeholder: "BuildRight Ghana Ltd", type: "text" },
+                      { label: "Email address", key: "email", placeholder: "kwame@yourcompany.com.gh", type: "email" },
+                      { label: "Phone or WhatsApp", key: "phone", placeholder: "+233 XX XXX XXXX", type: "tel" },
+                    ].map(({ label, key, placeholder, type }) => (
                       <div key={label}>
                         <label className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground block mb-1.5">{label}</label>
                         <input
+                          required
                           type={type}
+                          value={formData[key as keyof typeof formData] as string}
+                          onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
                           placeholder={placeholder}
                           className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm placeholder:text-muted-foreground/40 focus:outline-none focus:border-gray-400 transition-colors"
                         />
@@ -844,21 +892,40 @@ export default function Home() {
                       <label className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground block mb-2">Service needed</label>
                       <div className="flex flex-wrap gap-2">
                         {["Web Design", "Paid Ads", "AI Integration", "Full Package"].map(s => (
-                          <button key={s} className="px-3 py-1.5 rounded-full border border-border text-xs font-medium hover:border-gray-900 transition-colors">
+                          <button
+                            key={s}
+                            type="button"
+                            onClick={() => handleServiceToggle(s)}
+                            className={`px-3 py-1.5 rounded-full border text-xs font-medium transition-colors ${formData.services.includes(s) ? 'bg-primary text-background border-primary' : 'border-border hover:border-gray-900'}`}
+                          >
                             {s}
                           </button>
                         ))}
                       </div>
                     </div>
+
+                    {status.type === 'error' && (
+                      <div className="text-[10px] font-mono text-red-500 uppercase tracking-widest bg-red-500/10 p-3 rounded-lg border border-red-500/20">
+                        {status.message}
+                      </div>
+                    )}
+
+                    {status.type === 'success' && (
+                      <div className="text-[10px] font-mono text-primary uppercase tracking-widest bg-primary/10 p-3 rounded-lg border border-primary/20">
+                        {status.message}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full px-6 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] font-mono hover:opacity-90 transition-opacity"
+                      disabled={status.type === 'loading'}
+                      className={`w-full px-6 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] font-mono transition-all ${status.type === 'loading' ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-90'}`}
                       style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
                     >
-                      Send Message
+                      {status.type === 'loading' ? 'Sending...' : 'Send Message'}
                     </button>
                     <p className="text-[10px] text-muted-foreground text-center font-mono">We reply within 2 hours on business days · Accra, GMT+0</p>
-                  </div>
+                  </form>
                 </div>
               </motion.div>
             </div>
