@@ -8,6 +8,7 @@ import {
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SideRails from "@/components/SideRails";
+import { useBooking } from "@/context/BookingContext";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -64,6 +65,7 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const { openModal } = useBooking();
   const [activeTab, setActiveTab] = useState(0);
   const [pricingService, setPricingService] = useState('Web Design');
   const [formData, setFormData] = useState({
@@ -214,9 +216,7 @@ export default function Home() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  data-cal-namespace="lets-talk"
-                  data-cal-link="ogenci/lets-talk"
-                  data-cal-config='{"layout":"month_view"}'
+                  onClick={openModal}
                   className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] font-mono inline-flex items-center gap-3 shadow-[0_20px_50px_-15px_rgba(186,230,55,0.3)] cursor-pointer"
                   style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
                 >
@@ -599,9 +599,7 @@ export default function Home() {
                 <span>Research-first. Results-obsessed. Rooted in Africa. Built for the World.</span>
               </div>
               <button 
-                data-cal-namespace="lets-talk"
-                data-cal-link="ogenci/lets-talk"
-                data-cal-config='{"layout":"month_view"}'
+                onClick={openModal}
                 className="hover:text-foreground transition-colors cursor-pointer"
               >
                 Schedule your strategy call today
@@ -620,9 +618,7 @@ export default function Home() {
                   Websites and campaigns that <em className="italic font-normal text-muted-foreground">move</em> the business needle.
                 </h2>
                 <button 
-                  data-cal-namespace="lets-talk"
-                  data-cal-link="ogenci/lets-talk"
-                  data-cal-config='{"layout":"month_view"}'
+                  onClick={openModal}
                   className="text-[10px] font-mono uppercase tracking-[0.2em] font-bold border-b border-border pb-1 hover:text-muted-foreground transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
                   Let's Talk <ArrowRight className="w-3.5 h-3.5" />
@@ -767,9 +763,7 @@ export default function Home() {
 
 
                 <button 
-                  data-cal-namespace="lets-talk"
-                  data-cal-link="ogenci/lets-talk"
-                  data-cal-config='{"layout":"month_view"}'
+                  onClick={openModal}
                   className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] font-bold border-b border-border pb-1 hover:text-primary transition-colors mt-12 cursor-pointer"
                 >
                   Let's Talk <ArrowRight className="w-3.5 h-3.5" />
@@ -836,9 +830,7 @@ export default function Home() {
 
                 <div className="flex flex-wrap gap-4 mb-12">
                   <button
-                    data-cal-namespace="lets-talk"
-                    data-cal-link="ogenci/lets-talk"
-                    data-cal-config='{"layout":"month_view"}'
+                    onClick={openModal}
                     className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] font-mono inline-flex items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer"
                     style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a", boxShadow: "0 14px 26px -16px hsl(77, 100%, 38%)" }}
                   >

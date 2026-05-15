@@ -33,6 +33,10 @@ const WorkPage = lazy(() => import("@/pages/WorkPage"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 import CustomCursor from "@/components/CustomCursor";
 
+import { BookingProvider } from "@/context/BookingContext";
+import BookingModal from "@/components/BookingModal";
+import { useBooking } from "@/context/BookingContext";
+
 const queryClient = new QueryClient();
 
 function ScrollToTop() {
@@ -44,6 +48,8 @@ function ScrollToTop() {
 }
 
 function Router() {
+  const { isModalOpen, closeModal } = useBooking();
+
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a]">
@@ -59,6 +65,7 @@ function Router() {
         <Route path="/work/:slug" component={WorkPage} />
         <Route component={NotFound} />
       </Switch>
+      <BookingModal isOpen={isModalOpen} onClose={closeModal} />
     </Suspense>
   );
 }
@@ -67,6 +74,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <BookingProvider>
           <WouterRouter base={
             import.meta.env.BASE_URL.startsWith("/") && import.meta.env.BASE_URL !== "/"
               ? import.meta.env.BASE_URL.replace(/\/$/, "")
@@ -78,6 +86,7 @@ function App() {
             <CustomCursor />
             <Router />
           </WouterRouter>
+        </BookingProvider>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

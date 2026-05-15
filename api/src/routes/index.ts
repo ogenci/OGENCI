@@ -7,6 +7,6 @@ const router: IRouter = Router();
 
 router.use(healthRouter);
 router.use(contactRouter);
-// router.use(bookingRouter);
+router.use(bookingRouter);
 
 export default router;
