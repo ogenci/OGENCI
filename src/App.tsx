@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, Suspense, lazy } from "react";
 import { getCalApi } from "@calcom/embed-react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function CursorManager() {
   useEffect(() => {
@@ -91,6 +92,7 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
+        <SpeedInsights />
       </TooltipProvider>
     </QueryClientProvider>
   );
