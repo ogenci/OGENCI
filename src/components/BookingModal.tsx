@@ -96,7 +96,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     <Dialog.Root open={isOpen} onOpenChange={(open) => !open && handleClose()}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100]" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl bg-background border border-border rounded-3xl overflow-hidden shadow-2xl z-[101] focus:outline-none">
+        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl bg-background border border-border rounded-3xl overflow-hidden shadow-2xl z-[101] focus:outline-none">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[600px]">
             
             {/* Left Sidebar - Info */}
