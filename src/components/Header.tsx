@@ -70,7 +70,7 @@ export default function Header() {
                   </div>
                   <div className="flex flex-col hidden md:flex">
                     <span className="text-xl font-display font-bold tracking-[0.3em] text-foreground uppercase leading-none mr-[-0.3em]">OGENCI</span>
-                    <span className="text-[7px] font-mono text-muted-foreground uppercase tracking-[0.38em] leading-none mt-1.5 mr-[-0.38em]">Rooted in Africa · Built for the World</span>
+                    <span className="text-[7px] font-mono text-muted-foreground uppercase tracking-[0.45em] leading-none mt-1.5 mr-[-0.45em] block text-center">GLOBAL AGENCY</span>
                   </div>
                 </Link>
               </div>
