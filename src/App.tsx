@@ -31,11 +31,11 @@ function CursorManager() {
 const Home = lazy(() => import("@/pages/Home"));
 const WorkPage = lazy(() => import("@/pages/WorkPage"));
 const NotFound = lazy(() => import("@/pages/not-found"));
+const BookingPage = lazy(() => import("@/pages/BookingPage"));
 import CustomCursor from "@/components/CustomCursor";
+import SideRails from "@/components/SideRails";
 
-import { BookingProvider } from "@/context/BookingContext";
-import BookingModal from "@/components/BookingModal";
-import { useBooking } from "@/context/BookingContext";
+
 
 const queryClient = new QueryClient();
 
@@ -48,7 +48,6 @@ function ScrollToTop() {
 }
 
 function Router() {
-  const { isModalOpen, closeModal } = useBooking();
 
   return (
     <Suspense fallback={
@@ -62,10 +61,10 @@ function Router() {
       <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/book" component={BookingPage} />
         <Route path="/work/:slug" component={WorkPage} />
         <Route component={NotFound} />
       </Switch>
-      <BookingModal isOpen={isModalOpen} onClose={closeModal} />
     </Suspense>
   );
 }
@@ -74,7 +73,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <BookingProvider>
           <WouterRouter base={
             import.meta.env.BASE_URL.startsWith("/") && import.meta.env.BASE_URL !== "/"
               ? import.meta.env.BASE_URL.replace(/\/$/, "")
@@ -84,9 +82,9 @@ function App() {
           }>
             <CursorManager />
             <CustomCursor />
+            <SideRails />
             <Router />
           </WouterRouter>
-        </BookingProvider>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

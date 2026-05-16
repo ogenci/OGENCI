@@ -2,10 +2,8 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useBooking } from "@/context/BookingContext";
 
 export default function Header() {
-  const { openModal } = useBooking();
   const { scrollY } = useScroll();
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,16 +94,17 @@ export default function Header() {
               </div>
 
               <div className="flex items-center gap-3">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={openModal}
-                  className="flex items-center gap-2 px-6 h-10 rounded-full text-[10px] font-mono font-bold uppercase tracking-[0.2em] transition-colors cursor-pointer"
-                  style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
-                >
-                  Let's Talk 
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </motion.div>
+                <Link href="/book">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-2 px-6 h-10 rounded-full text-[10px] font-mono font-bold uppercase tracking-[0.2em] transition-colors cursor-pointer"
+                    style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
+                  >
+                    Let's Talk 
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </motion.div>
+                </Link>
 
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -162,18 +161,16 @@ export default function Header() {
             <div className="mt-8 space-y-8 pb-8 border-t border-border pt-8">
               <div className="space-y-4">
                 <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">Get Started</div>
-                <motion.div
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    openModal();
-                  }}
-                  className="w-fit flex items-center justify-between px-8 h-11 rounded-full text-[10px] font-mono font-bold uppercase tracking-[0.2em] transition-colors cursor-pointer"
-                  style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
-                >
-                  Let's Talk
-                  <ArrowUpRight className="w-4 h-4 ml-4" />
-                </motion.div>
+                <Link href="/book" onClick={() => setIsMenuOpen(false)}>
+                  <motion.div
+                    whileTap={{ scale: 0.98 }}
+                    className="w-fit flex items-center justify-between px-8 h-11 rounded-full text-[10px] font-mono font-bold uppercase tracking-[0.2em] transition-colors cursor-pointer"
+                    style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
+                  >
+                    Let's Talk
+                    <ArrowUpRight className="w-4 h-4 ml-4" />
+                  </motion.div>
+                </Link>
               </div>
 
               <div className="flex flex-col gap-4">

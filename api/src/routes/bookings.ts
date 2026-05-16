@@ -21,6 +21,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const bookingSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
+  businessName: z.string().min(2),
+  website: z.string().optional(),
+  challenge: z.string().min(10),
   service: z.string(),
   startTime: z.string().datetime(), // ISO string
 });
@@ -113,6 +116,9 @@ router.post("/book", async (req, res) => {
     const { error: dbError } = await supabase.from("bookings").insert({
       client_name: data.name,
       client_email: data.email,
+      business_name: data.businessName,
+      website: data.website,
+      challenge: data.challenge,
       service: data.service,
       start_time: data.startTime,
       end_time: endTime.toISOString(),
@@ -127,10 +133,13 @@ router.post("/book", async (req, res) => {
     await resend.emails.send({
       from: "OGENCI Bookings <onboarding@resend.dev>",
       to: process.env.CONTACT_RECEIVER_EMAIL || "ogencidigital@gmail.com",
-      subject: `New Booking: ${data.name} - ${data.service}`,
+      subject: `New Booking: ${data.name} - ${data.businessName}`,
       html: `
         <h2>New Booking Confirmed</h2>
         <p><strong>Client:</strong> ${data.name} (${data.email})</p>
+        <p><strong>Business:</strong> ${data.businessName}</p>
+        <p><strong>Website:</strong> ${data.website || "N/A"}</p>
+        <p><strong>Challenge:</strong> ${data.challenge}</p>
         <p><strong>Service:</strong> ${data.service}</p>
         <p><strong>Time:</strong> ${formattedDate} (GMT)</p>
       `,
@@ -145,6 +154,11 @@ router.post("/book", async (req, res) => {
         <h2>Your strategy call is confirmed!</h2>
         <p>Hi ${data.name},</p>
         <p>We've successfully booked your session for <strong>${formattedDate} (GMT)</strong>.</p>
+        <p><strong>Details Provided:</strong></p>
+        <ul>
+          <li><strong>Business:</strong> ${data.businessName}</li>
+          <li><strong>Challenge:</strong> ${data.challenge}</li>
+        </ul>
         <p>We'll send you a meeting link shortly before the call.</p>
         <p>Looking forward to building with you!</p>
         <br />

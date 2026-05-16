@@ -1,9 +1,15 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-[#0a0a0a] text-white px-6">
+    <div className="relative min-h-screen bg-[#0a0a0a] text-white">
+      <Header />
+      <div className="xl:px-10 w-full max-w-[1600px] mx-auto relative flex flex-col min-h-screen">
+        <main className="flex-grow flex items-center justify-center px-6 py-32">
       <div className="max-w-md w-full text-center space-y-8">
         <h1 className="text-[120px] font-display font-black leading-none tracking-tighter text-primary">404</h1>
         <div className="space-y-4">
@@ -20,6 +26,11 @@ export default function NotFound() {
               Back to Home
             </button>
           </Link>
+        </div>
+      </div>
+        </main>
+        <div className="bg-[#eae5d9] rounded-t-3xl overflow-hidden mt-auto">
+          <Footer />
         </div>
       </div>
     </div>

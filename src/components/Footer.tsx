@@ -12,15 +12,13 @@ export default function Footer() {
           <p className="text-[10px] font-mono uppercase tracking-[0.2em] font-bold text-[#0a0a0a]/70 leading-relaxed mb-6 max-w-xs">
             A premier global digital agency rooted in Africa. We build high-converting digital ecosystems, run ROI-driven ad campaigns, and deploy AI systems that scale businesses worldwide.
           </p>
-          <button
-            data-cal-namespace="lets-talk"
-            data-cal-link="ogenci/lets-talk"
-            data-cal-config='{"layout":"month_view"}'
+          <Link 
+            href="/book"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[10px] font-mono uppercase tracking-[0.2em] font-bold hover:opacity-90 transition-opacity shadow-sm cursor-pointer"
             style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
           >
             Let's Talk <ArrowUpRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
 
         {[

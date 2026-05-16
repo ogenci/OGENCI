@@ -3,8 +3,6 @@ import { Link, useRoute } from "wouter";
 import { ArrowUpRight, TrendingUp, Target } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SideRails from "@/components/SideRails";
-import { useBooking } from "@/context/BookingContext";
 
 const caseStudies = {
   "jonmoore": {
@@ -69,7 +67,6 @@ const fadeUp: Variants = {
 };
 
 export default function WorkPage() {
-  const { openModal } = useBooking();
   const [, params] = useRoute("/work/:slug");
   const slug = params?.slug || "jonmoore";
   
@@ -82,7 +79,6 @@ export default function WorkPage() {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-background">
-      <SideRails />
       <Header />
 
       <div className="xl:px-10 w-full max-w-[1600px] mx-auto relative">
@@ -127,7 +123,7 @@ export default function WorkPage() {
         
         {/* The Challenge & Solution */}
         <section className="px-6 py-32 border-b border-border">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8">
             <div className="md:col-span-5 md:col-start-2">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
                 <h3 className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground mb-6 flex items-center gap-3">
@@ -154,7 +150,7 @@ export default function WorkPage() {
 
         {/* Impact / Stats Grid */}
         <section className="px-6 py-32 bg-[#f4f1ea] border-b border-border">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-[1400px] mx-auto">
             <div className="mb-20 text-center">
               <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight">Business Impact</h2>
               <p className="mt-4 text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground font-bold">Measurable growth engineered for scale.</p>
@@ -235,13 +231,14 @@ export default function WorkPage() {
               Stop guessing. Start growing. Get a data-driven strategy custom-built for your business and the global market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <div
-                onClick={openModal}
-                className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] inline-flex items-center justify-center gap-2 text-[10px] font-mono transition-transform hover:scale-105 cursor-pointer" 
-                style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
-              >
-                Let's Talk <ArrowUpRight className="w-4 h-4" />
-              </div>
+              <Link href="/book">
+                <div
+                  className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] inline-flex items-center justify-center gap-2 text-[10px] font-mono transition-transform hover:scale-105 cursor-pointer" 
+                  style={{ backgroundColor: "hsl(77, 100%, 38%)", color: "#0a0a0a" }}
+                >
+                  Let's Talk <ArrowUpRight className="w-4 h-4" />
+                </div>
+              </Link>
               <Link href="/">
                 <button className="px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] inline-flex items-center justify-center gap-2 text-[10px] font-mono text-white border border-white/20 hover:bg-white/10 transition-colors">
                   Back to Home
